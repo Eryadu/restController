@@ -1,0 +1,1 @@
+https://medium.com/@averydcs/understanding-path-variables-and-query-parameters-in-http-requests-232248b71a8
