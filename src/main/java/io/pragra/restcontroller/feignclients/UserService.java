@@ -18,9 +18,9 @@ public class UserService {
     private UsersRepo usersRepo;
 
     public Users getUsersByFeignAndPersist (String login){
-        List<Users> usersList = usersRepo.findByName(login);
-        if(!usersList.isEmpty()){
-            return usersList.get(0);
+        Optional<Users> usersList = usersRepo.findByLogin(login);
+        if(usersList.isPresent()){
+            return usersList.get();
         }
         ResponseEntity<Users> responseEntity = userClient.getUsersByFeign(login);
         Users users = responseEntity.getBody();

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 //name : is application name; unique throughout feignClient
 @FeignClient(name = "userClient", url = "https://api.github.com/users")
-//@FeignClient(name = "userClient", url = "https://jsonplaceholder.typicode.com/posts")
+//@FeignClient(name = "userClient", url = "https://jsonplaceholder.typicode.com/posts") //to create fake user(OPEN API)
 
 public interface UserClient {
     @GetMapping("/{userLogin}")

@@ -15,6 +15,7 @@ public class AppConfig {
 
     @Bean
     public WebClient webClient() {
+        // webclient use declarative approach, so use builder method and its constructor is private
         return WebClient.builder().build();
     }
 }

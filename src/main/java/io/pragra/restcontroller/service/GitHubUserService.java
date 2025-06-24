@@ -1,4 +1,4 @@
-package io.pragra.restcontroller.Service;
+package io.pragra.restcontroller.service;
 
 import io.pragra.restcontroller.entity.GitHubUser;
 import io.pragra.restcontroller.repo.GitUserRepo;

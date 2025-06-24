@@ -16,7 +16,7 @@ public class RestTemplateController {
     private RestTemplateConsumer restTemplateConsumer;
 
     @GetMapping("/getforentity")
-    public Users getUser(@RequestParam String login) {
+    public ResponseEntity<String> getUser(@RequestParam String login) {
         return restTemplateConsumer.getForEntityAndPersist(login);
     }
 

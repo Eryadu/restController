@@ -1,9 +1,9 @@
-package io.pragra.restcontroller.Controller;
+package io.pragra.restcontroller.controller;
 
 
 import io.pragra.restcontroller.entity.StudentRc;
 import io.pragra.restcontroller.repo.StudentRcRepo;
-import io.pragra.restcontroller.Service.StudentRcService;
+import io.pragra.restcontroller.service.StudentRcService;
 import io.pragra.restcontroller.dto.StudentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

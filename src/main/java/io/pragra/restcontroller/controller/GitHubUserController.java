@@ -1,7 +1,7 @@
-package io.pragra.restcontroller.Controller;
+package io.pragra.restcontroller.controller;
 
 import io.pragra.restcontroller.entity.GitHubUser;
-import io.pragra.restcontroller.Service.GitHubUserService;
+import io.pragra.restcontroller.service.GitHubUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

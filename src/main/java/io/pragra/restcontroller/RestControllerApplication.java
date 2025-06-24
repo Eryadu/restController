@@ -1,6 +1,6 @@
 package io.pragra.restcontroller;
 
-import io.pragra.restcontroller.Controller.StudentRcController;
+import io.pragra.restcontroller.controller.StudentRcController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;

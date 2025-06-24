@@ -15,6 +15,7 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Component
 public class RestTemplateConsumer {
@@ -27,16 +28,16 @@ public class RestTemplateConsumer {
     private static final String user_url = "https://api.github.com/users/";
 
     // getForEntity :-> return object of ResponseEntity class with staus code and Resource as Object
-    public Users getForEntityAndPersist(String login){
-        List<Users> usersList = usersRepo.findByName(login);
-        if(!usersList.isEmpty()){
-            return usersList.get(0);
+    public ResponseEntity<String> getForEntityAndPersist(String login){
+        Optional<Users> usersList = usersRepo.findByLogin(login);
+        if(usersList.isPresent()){
+            return ResponseEntity.ok("User Found in Db " + usersList.get());
         }
         ResponseEntity<Users> responseEntity = restTemplate.getForEntity(user_url +login, Users.class);
         Users users = responseEntity.getBody();
         if(users != null && responseEntity.getStatusCode() == HttpStatus.OK ){
             usersRepo.save(users);
-            return users;
+            return ResponseEntity.ok("User saved in DB " + users);
         }
         // Optional: handle user not found in both DB and API
         return null;
@@ -44,9 +45,9 @@ public class RestTemplateConsumer {
     //----------------------------------------------------------------------------------------------------
     // getForObject :-> it return resource as Object only
     public Users getForObjectAndPersist(String login){
-        List<Users> usersList1 = usersRepo.findByName(login);
-        if(!usersList1.isEmpty()){
-            return usersList1.get(0);
+        Optional<Users> usersList1 = usersRepo.findByLogin(login);
+        if(usersList1.isPresent()){
+            return usersList1.get();
         }
         Users responseEntity = restTemplate.getForObject(user_url +login, Users.class);
         Users users1 = responseEntity;
