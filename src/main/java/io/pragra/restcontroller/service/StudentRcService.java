@@ -47,7 +47,7 @@ public class StudentRcService {
     // entity object of StudentRc is coming from front request
     public StudentRc patchStudentRc(StudentRc dto) {
         Optional<StudentRc> studentRc1 = studentRcRepo.findById(dto.getStudentId());
-        //Entity is coming from Db and Dto is coming from FrontEnd
+            //Entity is coming from Db and Dto is coming from FrontEnd
         StudentRc entity= null;
         if(!studentRc1.isPresent()) {
             return null;
