@@ -18,3 +18,9 @@ https://naveen-metta.medium.com/deep-dive-into-aspect-oriented-programming-aop-i
 ProceedingJoinPoint is a JoinPoint with additional features. ProceedingJoinPoint is used with @Around advice.
 @Around is very powerful advice that combines the features of rest of the Advice. ProceedingJoinPoint::proceed 
 is basically used to execute the original method.
+
+## https://sematext.com/blog/logging-levels/
+Logging levels
+
+https://medium.com/@AlexanderObregon/enhancing-logging-with-log-and-slf4j-in-spring-boot-applications-f7e70c6e4cc7
+@SLF4J and @Log Annotation of Lombok
